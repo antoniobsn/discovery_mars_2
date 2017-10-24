@@ -62,6 +62,17 @@ curl -X PATCH \
 	}
 }'
 ```
+## Buscar uma Sondao.
+```
+GET /api/v1/sonda/1
+```
+Exemplo
+```
+curl -X GET \
+  /api/v1/sonda/1 \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 43b8b511-cd9f-7faa-885b-21561ced2834'
+```
 
 ## Mover uma Sonda.
 ```
