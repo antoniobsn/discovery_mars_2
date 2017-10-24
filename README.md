@@ -30,6 +30,19 @@ curl -X POST \
    }
 }'
 ```
+Response
+```
+{
+    "Planalto": {
+        "id": 1,
+        "coordenadas": {
+            "x": 5,
+            "y": 5
+        },
+        "sondas": []
+    }
+}
+```
 
 ## Consultar um planalto.
 ```
@@ -41,6 +54,19 @@ curl -X GET \
   /api/v1/planalto/1 \
   -H 'cache-control: no-cache' \
   -H 'postman-token: 5e7d4a64-1ef6-506e-6bfd-4573aa80ef9c'
+```
+Response
+```
+{
+    "Planalto": {
+        "id": 1,
+        "coordenadas": {
+            "x": 5,
+            "y": 5
+        },
+        "sondas": []
+    }
+}
 ```
 
 ## Implantar uma sonda no Planalto.
@@ -62,6 +88,31 @@ curl -X PATCH \
 	}
 }'
 ```
+Response
+```
+{
+    "Planalto": {
+        "id": 1,
+        "coordenadas": {
+            "x": 5,
+            "y": 5
+        },
+        "sondas": [
+            {
+                "Sonda": {
+                    "id": 1,
+                    "coordenadas": {
+                        "x": 1,
+                        "y": 2
+                    },
+                    "direcao": "N"
+                }
+            }
+        ]
+    }
+}
+```
+
 ## Buscar uma Sondao.
 ```
 GET /api/v1/sonda/1
@@ -72,6 +123,20 @@ curl -X GET \
   /api/v1/sonda/1 \
   -H 'cache-control: no-cache' \
   -H 'postman-token: 43b8b511-cd9f-7faa-885b-21561ced2834'
+```
+
+Response
+```
+{
+    "Sonda": {
+        "id": 1,
+        "coordenadas": {
+            "x": 1,
+            "y": 2
+        },
+        "direcao": "N"
+    }
+}
 ```
 
 ## Mover uma Sonda.
@@ -88,6 +153,20 @@ curl -X PATCH \
   -d '{
 	"comandos": ["L","M","L","M","L","M","L","M","M"]
 }'
+```
+
+Response
+```
+{
+    "Sonda": {
+        "id": 1,
+        "coordenadas": {
+            "x": 1,
+            "y": 3
+        },
+        "direcao": "N"
+    }
+}
 ```
 
 ### Requisitos
