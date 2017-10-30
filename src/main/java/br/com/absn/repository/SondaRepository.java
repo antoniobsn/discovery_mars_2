@@ -2,6 +2,7 @@ package br.com.absn.repository;
 
 import br.com.absn.model.Planalto;
 import br.com.absn.model.Sonda;
+import br.com.absn.repository.interfaces.ISondaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -13,15 +14,17 @@ import java.util.Optional;
  */
 
 @Repository
-public class SondaRepository {
+public class SondaRepository implements ISondaRepository {
 
     private static Map<Long, Sonda> sondaStub = new HashMap<>();
     private static Long idSonda = 0L;
 
+    @Override
     public Optional<Sonda> buscarPorId(Long id) {
         return Optional.ofNullable(sondaStub.get(id));
     }
 
+    @Override
     public Sonda cria(Sonda sonda, Planalto planalto) {
         sondaStub.put(++idSonda,
                 new Sonda(idSonda, sonda.getCoordenadas(), sonda.getDirecao(), planalto));

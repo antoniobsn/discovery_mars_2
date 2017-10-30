@@ -1,8 +1,7 @@
 package br.com.absn.controller;
 
-import br.com.absn.model.tinytypes.Comandos;
 import br.com.absn.model.Sonda;
-import br.com.absn.repository.SondaRepository;
+import br.com.absn.model.tinytypes.Comandos;
 import br.com.absn.service.SondaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

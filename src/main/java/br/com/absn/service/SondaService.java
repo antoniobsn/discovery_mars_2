@@ -4,7 +4,7 @@ import br.com.absn.exception.business.SondaNaoEncontrada;
 import br.com.absn.model.Planalto;
 import br.com.absn.model.Sonda;
 import br.com.absn.model.tinytypes.Comandos;
-import br.com.absn.repository.SondaRepository;
+import br.com.absn.repository.interfaces.ISondaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +17,10 @@ import java.util.Optional;
 @Service
 public class SondaService {
 
-    private final SondaRepository repositorio;
+    private final ISondaRepository repositorio;
 
     @Autowired
-    public SondaService(SondaRepository repositorio) {
+    public SondaService(ISondaRepository repositorio) {
         this.repositorio = repositorio;
     }
 

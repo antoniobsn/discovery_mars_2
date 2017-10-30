@@ -3,7 +3,7 @@ package br.com.absn.service;
 import br.com.absn.exception.business.PlanaltoNaoEncontrado;
 import br.com.absn.model.Planalto;
 import br.com.absn.model.Sonda;
-import br.com.absn.repository.PlanaltoRepository;
+import br.com.absn.repository.interfaces.IPlanaltoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +18,11 @@ import java.util.Optional;
 @Service
 public class PlanaltoService {
 
-    private final PlanaltoRepository repositorio;
+    private final IPlanaltoRepository repositorio;
     private final SondaService sondaService;
 
     @Autowired
-    public PlanaltoService(PlanaltoRepository repositorio, SondaService sondaService) {
+    public PlanaltoService(IPlanaltoRepository repositorio, SondaService sondaService) {
         this.repositorio = repositorio;
         this.sondaService = sondaService;
     }
